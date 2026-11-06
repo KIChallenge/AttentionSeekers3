@@ -10,7 +10,7 @@
 All providers are called through the OpenAI SDK (their OpenAI-compatible endpoints) with function calling.
 The model only chooses tools, parameters and templates (product principle "no AI hallucinations"); it never
 produces a number that is shown or stored. Every call is logged in ops.llm_call (model, deployment, purpose,
-token counts, duration) for the protocol and MODELLE.md. Without configuration the agents run in the offline
+token counts, duration) for the protocol and abgabe/MODELLE.md. Without configuration the agents run in the offline
 mode: a deterministic German intent parser (statagent/agents/intent.py) – labelled as such in the UI.
 """
 import json

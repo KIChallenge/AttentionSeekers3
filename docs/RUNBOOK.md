@@ -67,7 +67,7 @@ Each creates a proposal (R-A1 / R-A2 / R-A3) with diff and before/after numbers 
 
 ## 4 👤 Protocol and commits (T8)
 
-`protokoll` exports `protokoll/protokoll.md` and prints the suggested message. One commit per change, message = instruction + `Freigegeben-von: Name`. The tools never commit.
+`protokoll` exports `abgabe/protokoll/protokoll.md` and prints the suggested message. One commit per change, message = instruction + `Freigegeben-von: Name`. The tools never commit.
 
 ## 5 Optional
 

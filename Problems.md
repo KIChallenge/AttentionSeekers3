@@ -273,7 +273,7 @@ Status 2026-11-06. Problems of our own software, not of the delivered data. **Pr
 | ID | Problem | Prio | Fix |
 | --- | --- | --- | --- |
 | SW-01 | Change orders 1–3 had only run as rehearsals | done 06.11. | given to the agent (tasks 10–12 → R-A1/2/3), approved, carried out by the agent (task 14): 24 `auftraege` runs 218–241 (07/2026 whole month 407,604; Arbeiter/Angestellte/Beamte 147,736 / 247,579 / 12,289), 24 QBs `auftraege`, `aggregationen_auftraege.xlsx` + Open-Data-File (96 sheet-months checked), `ministerium_2026-07.csv` (32,741 persons); protocol entries 53–62; ministry delivery released 06.11. 07:30 (entry 62) |
-| SW-02 | Commits lack the line `Freigegeben-von: Name`. T8 is already met by `protokoll/protokoll.md` (instruction, change, approver, time) – the commit form is only one sufficient way („reicht“). Required is only that everything is committed and pushed before 09:00 | B (push: A) | push everything; optionally empty commits per approval with `Freigegeben-von:` |
+| SW-02 | Commits lack the line `Freigegeben-von: Name`. T8 is already met by `abgabe/protokoll/protokoll.md` (instruction, change, approver, time) – the commit form is only one sufficient way („reicht“). Required is only that everything is committed and pushed before 09:00 | B (push: A) | push everything; optionally empty commits per approval with `Freigegeben-von:` |
 | SW-03 | No Azure access received (ENV-10) | done 06.11. | data agent runs with Anthropic `claude-sonnet-5-5` (key in `.env`, tested live); switch to Azure or any other provider at any time via `AGENT_*` in `.env`; every call logged in `ops.llm_call` |
 
 ### 8.2 Functional limitations
@@ -293,7 +293,7 @@ Status 2026-11-06. Problems of our own software, not of the delivered data. **Pr
 | SW-14 | Only one job at a time in the API (job lock); a second run/preview reports „Es läuft bereits ein anderer Auftrag“ | C | queue |
 | SW-15 | Published months are frozen (Z4): changing an approved rule later requires a new rule set or a revision procedure, not a rerun | C | by design; a „Revision“ workflow could be added |
 | SW-16 | DQ-16 phantom double registrations are counted as delivered in the official series (as in the example report); exclusion only per statistic in the chat | C | Rückfrage RF-DQ16 answer → rule |
-| SW-17 | Models (corridor/detector) evaluated on only one real delivery per error type; seasonality calibrated on the same 24 deliveries that are used for evaluation; corridor works on „wie geliefert“ values (W-06) | C | honest limits in MODELLE.md; more history needed |
+| SW-17 | Models (corridor/detector) evaluated on only one real delivery per error type; seasonality calibrated on the same 24 deliveries that are used for evaluation; corridor works on „wie geliefert“ values (W-06) | C | honest limits in abgabe/MODELLE.md; more history needed |
 | SW-18 | Pension statistic: year-over-year jumps of LZV (women, 2019) classified „nicht erklärbar“; no pension QB per year, only one Prüfbericht | C | Rückfrage to the Fachabteilung |
 
 ### 8.3 Technical issues

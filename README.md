@@ -5,12 +5,13 @@ An agent-supported, **deterministically calculating** statistics production for 
 | Document | Content |
 | --- | --- |
 | [docs/RUNBOOK.md](docs/RUNBOOK.md) | **how the submission was produced, what to run, and the jury script** |
+| [docs/PRAESENTATION.md](docs/PRAESENTATION.md) | **Präsentationsskript für die Fachjury** (Ablauf, Sprechtext, Fragen und Antworten – besonders zu den Modellen) |
 | [docs/RECOMPUTE.md](docs/RECOMPUTE.md) | what the recompute after the rule approvals did and why; fresh-clone steps |
 | [StateOfDevelopment.md](StateOfDevelopment.md) | state, architecture, tech stack, rules and scoring |
 | [Problems.md](Problems.md) | every issue found in data, package and specification, with evidence |
 | [Phases.md](Phases.md) | implementation plan and progress |
-| [MODELLE.md](MODELLE.md) | models used: language model for the agents (no Azure access received → Anthropic, switchable via `.env`) and our own corridor/detector with metrics and limits |
-| [protokoll/protokoll.md](protokoll/protokoll.md) | protocol of all approved changes (T8) |
+| [abgabe/MODELLE.md](abgabe/MODELLE.md) | models used: language model for the agents (no Azure access received → Anthropic, switchable via `.env`) and our own corridor/detector with metrics and limits |
+| [abgabe/protokoll/protokoll.md](abgabe/protokoll/protokoll.md) | protocol of all approved changes (T8) |
 | [docs/PRD.md](docs/PRD.md), [docs/references.md](docs/references.md) | original requirements / build plan (historical), prior art and licences |
 | [web/STATUS.md](web/STATUS.md), [web/README.md](web/README.md) | web frontend: pages, conventions, known issues, start commands |
 | [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) | licences of dependencies and styling |
@@ -67,7 +68,7 @@ Console (everything is available here; logs in `logs/`): `.venv\Scripts\python.e
 | `code-freigeben C-0001 --von` · `code-ausfuehren C-0001 --von` | approve / run agent-generated code (T6) |
 | `pensionen` · `modelle` | pension statistic (~10 s) · synthetic data + corridor + detector (~10 min) |
 | `sichern` · `wiederherstellen DATEI --ja` | database dump (0.5 GB, SHA-256, not in git) · restore it on another machine |
-| `protokoll` · `freigaben-wiederherstellen` · `geheimnisse` · `web` | protocol export + `protokoll/freigaben.json` + commit message · restore rule decisions in a fresh clone · secret scan · JSON API |
+| `protokoll` · `freigaben-wiederherstellen` · `geheimnisse` · `web` | protocol export + `abgabe/protokoll/freigaben.json` + commit message · restore rule decisions in a fresh clone · secret scan · JSON API |
 
 Web UI (two terminals):
 ```powershell
@@ -76,7 +77,7 @@ cd web; pnpm dev                                                 # UI on http://
 ```
 Pages: Übersicht · Lieferungen · Läufe · Qualitätsberichte · Klassifikationen · Pensionen · Dashboard · Modelle · Fragen · Agent · Freigaben · Protokoll · Exporte. Login = choose a named person (used for approvals).
 
-Fresh clone (the database is not in git): fastest with a dump from `sichern` → `wiederherstellen DATEI --ja` → `pruefen`. Without a dump: `migrieren → laden → pruefen → freigaben-wiederherstellen → klassifikation → bestand → gesamtlauf → kalibrierung → aggregationen`. `freigaben-wiederherstellen` re-applies the team's rule decisions from `protokoll/freigaben.json` (written by `protokoll`), but only for rules whose action and parameters are unchanged; publication (`veroeffentlichen`) is a new decision by a person. Then change orders as in [docs/RUNBOOK.md](docs/RUNBOOK.md).
+Fresh clone (the database is not in git): fastest with a dump from `sichern` → `wiederherstellen DATEI --ja` → `pruefen`. Without a dump: `migrieren → laden → pruefen → freigaben-wiederherstellen → klassifikation → bestand → gesamtlauf → kalibrierung → aggregationen`. `freigaben-wiederherstellen` re-applies the team's rule decisions from `abgabe/protokoll/freigaben.json` (written by `protokoll`), but only for rules whose action and parameters are unchanged; publication (`veroeffentlichen`) is a new decision by a person. Then change orders as in [docs/RUNBOOK.md](docs/RUNBOOK.md).
 
 Tests: `.venv\Scripts\python.exe -m pytest` (45 tests; `-m "not integration"` for the fast unit tests; frontend: `cd web; pnpm test:smoke`: claim check, intent parser, data agent with a fake model, generated-code guard, ministry plan; integration tests against the DB for reconciliation, reproducibility, calibration, sheet totals, approval gates and read-only access – all rolled back).
 
@@ -90,8 +91,8 @@ Tests: `.venv\Scripts\python.exe -m pytest` (45 tests; `-m "not integration"` fo
 | Rückfragen | `abgabe/rueckfragen/RF-DQ02.md`, `RF-DQ04.md`, `RF-DQ16.md` |
 | Calibration | `abgabe/kalibrierung_2024-08.md` |
 | Ministry delivery 07/2026 | `abgabe/ministerium_2026-07.csv` (32,741 persons, released 06.11.2026) |
-| Protocol | `protokoll/protokoll.md` |
-| Models statement | `MODELLE.md` |
+| Protocol | `abgabe/protokoll/protokoll.md` |
+| Models statement | `abgabe/MODELLE.md` |
 
 ## Configuration (`.env`)
 
@@ -105,12 +106,12 @@ Tests: `.venv\Scripts\python.exe -m pytest` (45 tests; `-m "not integration"` fo
 ## Known limitations and open points
 
 - **Done by the team (2026-11-06):** R-DQ03/05/09 approved, basis series recomputed and published (see docs/RECOMPUTE.md). R-DQ02/04/10 deliberately not approved – handled per statistic in the chat.
-- **Change orders done (2026-11-06):** the three instructions were given to our agents in German, approved (R-A1/R-A2/R-A3) and carried out by the agent: 24 runs in the rule set `auftraege`, its sheet and quality reports, and the ministry delivery (released). Every step is in `protokoll/protokoll.md`. The `auftraege` series is labelled „vorläufig“ (publishing it is the team's decision).
+- **Change orders done (2026-11-06):** the three instructions were given to our agents in German, approved (R-A1/R-A2/R-A3) and carried out by the agent: 24 runs in the rule set `auftraege`, its sheet and quality reports, and the ministry delivery (released). Every step is in `abgabe/protokoll/protokoll.md`. The `auftraege` series is labelled „vorläufig“ (publishing it is the team's decision).
 - Calibration: **bestanden** – totals and Tab1–Tab12 match; the 359 age cells that differ vanish completely when the 370 month-13 birth dates are read like the example report (birth year) instead of with the approved R-DQ05 swap; both variants are in `abgabe/kalibrierung_2024-08.md`.
 - Database for another machine: `statagent sichern` (0.5 GB dump with SHA-256, not in git) and `statagent wiederherstellen DATEI --ja` instead of the ~30 min rebuild.
 - **Language model (ENV-10):** no access to the Azure model was received; the agent runs with Anthropic `claude-sonnet-5-5` (key in `.env`, not committed). The model can be switched at any time via `AGENT_*` in `.env` (restart `statagent web`); without a key the chat runs in the labelled offline mode.
 - Open points and known limitations are listed in Problems.md §8. With the model, free wording (also English) is understood; the agent declines questions outside the data and reports fields that were never delivered. Offline, the parser understands the documented question types; unknown phrasing leads to a Rückfrage, not a guess.
-- Models: honest metrics but tiny real samples (one affected delivery per error type); see MODELLE.md.
+- Models: honest metrics but tiny real samples (one affected delivery per error type); see abgabe/MODELLE.md.
 - `SV md files/Use Case 3 StatAgent.pdf/.md` are not in the repo because they contain the SV-BOX password.
 
 ## Data and licences

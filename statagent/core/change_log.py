@@ -1,6 +1,6 @@
 """Change-log export (T8): every change with instruction, approver and time, as a tracked file.
 
-The file protokoll/protokoll.md (German, for the jury) is committed together with the change; the commit
+The file abgabe/protokoll/protokoll.md (German, for the jury) is committed together with the change; the commit
 message is the instruction plus the object and a line 'Freigegeben-von: <Name>' (see commit_message). The team
 commits; this module never runs `git commit`. On export, entries without a commit hash are linked to the first
 commit after them whose message names their object (e.g. R-DQ05, C-0001, ministerium_2026-07.csv) – read-only `git log`.
@@ -11,7 +11,7 @@ from pathlib import Path
 
 from statagent.config import BASE_DIR
 
-EXPORT_FILE = BASE_DIR / "protokoll" / "protokoll.md"
+EXPORT_FILE = BASE_DIR / "abgabe" / "protokoll" / "protokoll.md"
 
 
 def entries(conn) -> list[tuple]:

@@ -383,7 +383,7 @@ def secret_scan():
 
 @app.command("freigaben-wiederherstellen")
 def restore_approvals():
-    """Nach einem frischen Klon: Regelentscheidungen aus protokoll/freigaben.json übernehmen (nur unveränderte Regeln)."""
+    """Nach einem frischen Klon: Regelentscheidungen aus abgabe/protokoll/freigaben.json übernehmen (nur unveränderte Regeln)."""
     from statagent.config import connect
     from statagent.core import approvals_io
     with connect() as conn:
@@ -400,13 +400,13 @@ def web(port: int = typer.Option(8000, help="Port der JSON-API (nur 127.0.0.1)."
 
 @app.command("protokoll")
 def export_change_log():
-    """Änderungsprotokoll nach protokoll/protokoll.md exportieren und die Commit-Nachricht vorschlagen (T8)."""
+    """Änderungsprotokoll nach abgabe/protokoll/protokoll.md exportieren und die Commit-Nachricht vorschlagen (T8)."""
     from statagent.config import connect
     from statagent.core import change_log
     with connect() as conn:
         count = change_log.export(conn)
         from statagent.core import approvals_io
-        typer.echo(f"{approvals_io.export(conn)} Regelentscheidungen nach protokoll/freigaben.json geschrieben (für frische Klone)")
+        typer.echo(f"{approvals_io.export(conn)} Regelentscheidungen nach abgabe/protokoll/freigaben.json geschrieben (für frische Klone)")
         typer.echo(f"{count} Einträge nach {change_log.EXPORT_FILE.relative_to(change_log.BASE_DIR).as_posix()} geschrieben")
         message = change_log.commit_message(conn)
     if message:

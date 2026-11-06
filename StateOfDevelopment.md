@@ -45,7 +45,7 @@ Original documents. They are **unchanged and authoritative**, and this file link
   - **the project lives in the team repo `Merrixx/Attentionseeker3-case3`** (SSH; local working copy `AttentionSeekers3`):
     - `README.md` per Teilnahmeinformationen
     - `.gitattributes` keeps the package files byte-identical (no CRLF conversion)
-    - `protokoll/protokoll.md` holds the approvals
+    - `abgabe/protokoll/protokoll.md` holds the approvals
     - commits and pushes are made by the team
     - `..\SV usecase3` stays as the original download
   - **database loaded and verified (2026-11-05):**
@@ -71,7 +71,7 @@ AttentionSeekers3/                    local working copy of the team repo Merrix
 │                                     Fachbeschreibung.md, aenderungsauftraege.md, StatAgent Aufgabenstellung für die Teams.md (older)
 ├── README.md                         our solution README (package README: SV md files/README.md)
 ├── AGENTS.md                         ground rules and commands for coding agents
-├── protokoll/protokoll.md            exported change protocol (T8)
+├── abgabe/protokoll/protokoll.md            exported change protocol (T8)
 ├── .gitattributes                    package files byte-identical in git
 ├── StateOfDevelopment.md, Problems.md, Phases.md   project docs (ours)
 ├── statagent/                        our code (English): cli.py (German commands), config.py, migration.py, core/ (rules.py, change_log.py, labels.py),
@@ -229,7 +229,7 @@ Jahresdurchschnitt;2025-01-01;2025-12-31;PVA-ARB;ALTER;M;Pensionen;395763;endgue
 | Change orders + ministry | **done 06.11.**: instructions given to the agents, R-A1/2/3 approved, carried out by the agent (24 runs `auftraege`, sheet, 24 QBs), ministry CSV 32,741 persons, released | optional: publish `auftraege` |
 | Pensions | **done**: 28 files, 6 format families, carrier classification with 2020 mergers, `stat_pensionen` + totals, 378 sum checks | – |
 | Models | **done**: synthetic generator, detector, corridor, model card | – |
-| UI, repo, docs | **done**: web app (13 pages), README, RUNBOOK, MODELLE.md, THIRD_PARTY_LICENSES, 45 tests + frontend smoke test, secret scan (incl. agent keys), page links via URL state, database dump/restore (`sichern`/`wiederherstellen`) | commits by the team |
+| UI, repo, docs | **done**: web app (13 pages), README, RUNBOOK, abgabe/MODELLE.md, THIRD_PARTY_LICENSES, 45 tests + frontend smoke test, secret scan (incl. agent keys), page links via URL state, database dump/restore (`sichern`/`wiederherstellen`) | commits by the team |
 
 ## 6 Environment and tech stack
 

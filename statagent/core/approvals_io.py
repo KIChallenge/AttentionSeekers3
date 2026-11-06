@@ -1,4 +1,4 @@
-"""Approvals travel with the repository: protokoll/freigaben.json (tracked) ↔ ops.approval / ops.rule (local database).
+"""Approvals travel with the repository: abgabe/protokoll/freigaben.json (tracked) ↔ ops.approval / ops.rule (local database).
 
 The database is not in git. So that a fresh clone computes with the same approved rules, `protokoll` writes every rule
 decision (who, when, comment) together with a fingerprint of the approved rule (action + parameters). `freigaben-wiederherstellen`
@@ -10,7 +10,7 @@ import json
 
 from statagent.config import BASE_DIR
 
-FILE = BASE_DIR / "protokoll" / "freigaben.json"
+FILE = BASE_DIR / "abgabe" / "protokoll" / "freigaben.json"
 
 
 def fingerprint(action: str, parameters) -> str:
@@ -48,7 +48,7 @@ def restore(conn) -> list[str]:
             conn.execute("UPDATE ops.rule SET status = %s, approved_by = %s, approved_at = %s WHERE rule_id = %s",
                          (e["decision"], e["person"], e["decided_at"], e["rule_id"]))
             conn.execute("INSERT INTO ops.change_log (instruction, change, object, approved_by) VALUES (%s, %s, %s, %s)",
-                         (e["comment"], f"Entscheidung zu {e['rule_id']} aus protokoll/freigaben.json wiederhergestellt "
+                         (e["comment"], f"Entscheidung zu {e['rule_id']} aus abgabe/protokoll/freigaben.json wiederhergestellt "
                                         f"(ursprünglich {e['decided_at'][:16]})", f"rule:{e['rule_id']}", e["person"]))
             out.append(f"{e['rule_id']}: {e['decision']} von {e['person']} ({e['decided_at'][:16]}) wiederhergestellt")
     return out

@@ -105,7 +105,7 @@ flowchart TB
 
   AZ[(Azure OpenAI<br/>exchangeable model)]
   GIT[(git: one commit per change<br/>Freigegeben-von: Name)]
-  OUT[Deliverables: 2 × Aggregations-Sheet · 24 QBs<br/>ministerium_2026-07.csv · protokoll.md · MODELLE.md]
+  OUT[Deliverables: 2 × Aggregations-Sheet · 24 QBs<br/>ministerium_2026-07.csv · protokoll.md · abgabe/MODELLE.md]
 
   L & K & P & V --> ETL --> ROH
   ROH --> ETL --> STORE & PUB
@@ -260,7 +260,7 @@ Status: Phases 0 (mostly), 1, 2 and the English refactor are done; see Phases.md
 - Header-based parsers for the 7 format variants (PEN-01–04), `klass_versicherungstraeger` with 2020 mergers (n:1 transitions), `klass_pensionsart`, sex via Quellzuordnung; `stat_pensionen` + computed totals; checks and explained jumps (RD-04/05).
 
 ### F8 Hardening and submission [MIN] (Phase 8)
-- Two full runs identical; package and `roh.*` checksums unchanged; offline test; secret scan of git history; `THIRD_PARTY_LICENSES`; `MODELLE.md`; README per Teilnahmeinformationen; jury script (solution → errors → one assumption (DQ-02 or DQ-16) → live change → data questions).
+- Two full runs identical; package and `roh.*` checksums unchanged; offline test; secret scan of git history; `THIRD_PARTY_LICENSES`; `abgabe/MODELLE.md`; README per Teilnahmeinformationen; jury script (solution → errors → one assumption (DQ-02 or DQ-16) → live change → data questions).
 
 ---
 
@@ -309,8 +309,8 @@ Status 2026-11-05 evening: ✅ fulfilled · 🔧 planned (phase) · ⚠️ risk 
 | Aggregations-Sheet (Bundesland, Geschlecht, ÖNACE, Beschäftigungskategorie), all months, old rules **and** after the change orders | 🔧 F4 / F6 | `reporting`, template `aggregationen_vorlage.xlsx` |
 | 24 Qualitätsberichte (errors, assumptions with justification, assignments, revision need) | 🔧 F3 | QB generator, `ops.finding`, `ops.inquiry` |
 | Ministeriums-Lieferung 07/2026 | 🔧 F6 | `ministerium_2026-07.csv` from `store.segment` |
-| Protocol of all agent changes | ✅ mechanism (`ops.change_log`, `protokoll/protokoll.md`, 3 entries) · 🔧 git commit hash per entry (F5) | `change_log.py` |
-| Short statement on the models used | 🔧 F8 | `MODELLE.md` (Azure model ids, our corridor/detector with model card) |
+| Protocol of all agent changes | ✅ mechanism (`ops.change_log`, `abgabe/protokoll/protokoll.md`, 3 entries) · 🔧 git commit hash per entry (F5) | `change_log.py` |
+| Short statement on the models used | 🔧 F8 | `abgabe/MODELLE.md` (Azure model ids, our corridor/detector with model card) |
 | Repo: code, config without secrets, documentation, tests | ✅ code/docs/tests · ⚠️ pytest 9.2.0 broken on Python 3.10 (ENV-16) · ✅ secrets only in `.env`, SV-BOX password files gitignored | README, AGENTS, Phases, Problems, `tests/` |
 | README: solution + approach, how to run, dependencies, configuration, known limitations | ✅ | README.md |
 
@@ -325,7 +325,7 @@ Status 2026-11-05 evening: ✅ fulfilled · 🔧 planned (phase) · ⚠️ risk 
 | T5 own agents carry out operational changes, by language | 🔧 F5/F6 (coordinator + roles; change orders via agents) | – |
 | T6 agent code: readable file, CLI-startable, no LLM at run time, approved before first run, logged | 🔧 F5 (`statagent/generated/`, approval gate, `ops.approval` type `code`) | – |
 | T7 named human approves every rule/code/delivery | ✅ `freigeben --von "Name"`, DB rejects „Team“; 3 approvals by Mercy · 🔧 deliveries (F6) | `ops.approval` |
-| T8 protocol per change, one commit with `Freigegeben-von:` | ✅ export + suggested message · ⚠️ team must commit per change (2 commits so far, R-DQ01/07/08 not yet committed separately) | `protokoll/protokoll.md` |
+| T8 protocol per change, one commit with `Freigegeben-von:` | ✅ export + suggested message · ⚠️ team must commit per change (2 commits so far, R-DQ01/07/08 not yet committed separately) | `abgabe/protokoll/protokoll.md` |
 | Anhang A 1 – no relationship lost | ✅ store keeps all 10,152,292 rows; duplicates counted once by rule · 🔧 run gate „nicht zuordenbar“ + reconciliation (F3) | Problems.md §0 |
 | Anhang A 2 – assumptions justified, documented, per record | ✅ rules carry Annahme/Begründung; `store.segment.rules` per row · 🔧 QB (F3) | – |
 | Anhang A 3 – Rückfragen with evidence | 🔧 F3 generator from template; evidence (delivery, count, example IDs, SQL) available | `ops.inquiry` |

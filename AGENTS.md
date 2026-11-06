@@ -38,7 +38,7 @@ Read first: `StateOfDevelopment.md` (state, architecture, tech stack, rules/scor
 | `klassifikation [--nur-pruefen]` | rebuild all `klass_*`, `klass_uebergang`, `quellzuordnung` (~1 s) + check every delivered code (~10 s) |
 | `erklaeren KLASS CODE [--version V]` | deterministic explanation of a code (KLASS = region, oenace, geschlecht, qualifikation, alter) |
 | `regeln [ID]`, `freigeben ID --von "Name"`, `ablehnen ID --von "Name"` | rules and approvals |
-| `protokoll` | export `protokoll/protokoll.md` + suggested commit message |
+| `protokoll` | export `abgabe/protokoll/protokoll.md` + suggested commit message |
 | `lauf --lieferung JJJJ-MM [--regelwerk basis\|auftraege] [--vorschau R-…]`, `gesamtlauf` | monthly run (~35 s) / 24 runs: stat_beschaeftigte, findings, QB, Rückfragen |
 | `kalibrierung [--vorschau R-DQ05]`, `veroeffentlichen --von` | 2,880-cell test against the example report / named publication (freeze) |
 | `aggregationen --regelwerk`, `ministerium`, `lieferung-freigeben DATEI --von` | sheet + Open-Data-File / ministry CSV (needs approved R-A3) / delivery release |

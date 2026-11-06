@@ -197,10 +197,10 @@ Strg+K (cmdk) jumps to pages, QB months and rules.
 Technically almost complete; the gaps are mostly human steps (see root `docs/RUNBOOK.md`):
 1. ~~Change orders 1–3 never executed for real~~ done 06.11. (agent task 14; sheet, QBs and ministry CSV in `abgabe/`).
 2. ~~Ministry delivery missing~~ done: `abgabe/ministerium_2026-07.csv`, released 06.11. 07:30.
-3. T8: met by `protokoll/protokoll.md` (instruction, change, approver, time per entry); commits by the team.
+3. T8: met by `abgabe/protokoll/protokoll.md` (instruction, change, approver, time per entry); commits by the team.
 4. ~~Open approvals R-DQ03/05/09 + `veroeffentlichen`~~ done 05./06.11. (basis series published, docs/RECOMPUTE.md).
 5. Agent code path (T6) and live change never run end-to-end (W-12).
-6. T4: no access to the Azure model received → agent runs with Anthropic `claude-sonnet-5-5`, switchable via `.env` (documented in MODELLE.md).
+6. T4: no access to the Azure model received → agent runs with Anthropic `claude-sonnet-5-5`, switchable via `.env` (documented in abgabe/MODELLE.md).
 7. ~~Docs partly stale~~ updated 06.11. (PRD marked historical, README final, calibration explained).
 8. Final: commit + push to the submission repo before Fri 09:00.
 
@@ -221,7 +221,7 @@ dynamic per user in the chat (data-quality panel, copy in `work.dq_copy`, „kei
 | R-DQ02, R-DQ04, R-DQ10 | not approved (deliberately) | Handled per statistic in the chat (three options + free text); QBs state „gezählt wie geliefert“ + Rückfragen RF-DQ02/RF-DQ04. |
 
 Where the QBs get it from: `statagent/qa/report.py` lists every applied rule with `approved_by`, `approved_at`, `assumption`
-and `justification` from `ops.rule`. The approval comment is stored in `ops.approval.comment` and in `protokoll/protokoll.md`,
+and `justification` from `ops.rule`. The approval comment is stored in `ops.approval.comment` and in `abgabe/protokoll/protokoll.md`,
 and is printed in the QB since 05.11. („Anmerkung bei der Freigabe (Name): …“, `statagent/qa/report.py`).
 
 Approvals done (Mercy). Recalculation after the approvals of 23:19/23:20 (PowerShell, repo root), all steps needed, in this order:
