@@ -1,0 +1,74 @@
+[
+ {
+  "rule_id": "R-DQ01",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T14:59:41.251558+01:00",
+  "comment": null,
+  "fingerprint": "559bf2042f94634cf38a8b24862b40a2aeee371980be8407bdfe90586f59c8f3"
+ },
+ {
+  "rule_id": "R-DQ07",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T15:45:37.424147+01:00",
+  "comment": "ÖNACE-2003-Codes DA–DM dem Abschnitt C zuordnen",
+  "fingerprint": "9943c04ddd000518df5b9ed7deda1cd3d7aa93baa030c3297baf1846ca0bb965"
+ },
+ {
+  "rule_id": "R-DQ08",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T15:45:47.949859+01:00",
+  "comment": "Leere Merkmale der Ausprägung unbekannt zuordnen",
+  "fingerprint": "681888a707bf24e479f616d00f8506af0fd8ce48820e3916efd30324460d416d"
+ },
+ {
+  "rule_id": "R-DQ03",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T23:19:23.207054+01:00",
+  "comment": "Exakt doppelte Saetze = technische Doppellieferung; jedes Verhaeltnis zaehlt einmal (Anhang A Regel 1), Kopien bleiben markiert.",
+  "fingerprint": "82537170b9241b7a99a1acc4e0311a5b587697a7f3c40abbf6d3a55b5d53c03f"
+ },
+ {
+  "rule_id": "R-DQ05",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T23:20:02.704972+01:00",
+  "comment": "Monat 13 = falsches Datumsformat; Tag/Monat getauscht lesen, sonst Alter unbekannt; kein Verhaeltnis geht verloren.",
+  "fingerprint": "68a82b0e265543b1b4379d8ad00c48bb8aeaaecbd2235e4b209bbb0a910f9614"
+ },
+ {
+  "rule_id": "R-DQ09",
+  "decision": "approved",
+  "person": "Mercy",
+  "decided_at": "2026-11-05T23:20:25.472841+01:00",
+  "comment": "Ueberlappung: spaeterer Abschnitt gilt ab seinem Beginn (Fachbeschreibung 2); Verhaeltnis zaehlt einmal.",
+  "fingerprint": "721466d5b0c1eb46f1050018710555ec663b52c177968011ea019fbd311c3a57"
+ },
+ {
+  "rule_id": "R-A1",
+  "decision": "approved",
+  "person": "Test User",
+  "decided_at": "2026-11-06T03:24:43.580157+01:00",
+  "comment": null,
+  "fingerprint": "ac6b0e69a22992fb4df40f807a7100daedbaff429fe52f342c0dcd0e737a2abf"
+ },
+ {
+  "rule_id": "R-A2",
+  "decision": "approved",
+  "person": "Test User",
+  "decided_at": "2026-11-06T03:25:25.849099+01:00",
+  "comment": null,
+  "fingerprint": "93f75f26e4ad2b26f1573a7452e13cab0fe827e126b904d804ecd23dfe87632f"
+ },
+ {
+  "rule_id": "R-A3",
+  "decision": "approved",
+  "person": "Test User",
+  "decided_at": "2026-11-06T03:26:15.234775+01:00",
+  "comment": null,
+  "fingerprint": "365b7ba1ad530d84fb05c755112a3cbfcd3bfe5af6f38a64c848fde50e6e426b"
+ }
+]

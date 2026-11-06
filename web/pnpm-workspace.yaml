@@ -1,0 +1,5 @@
+# Project rule: only releases older than 7 days (10080 minutes).
+minimumReleaseAge: 10080
+onlyBuiltDependencies:
+  - sharp
+  - "@tailwindcss/oxide"

@@ -1,0 +1,29 @@
+Pensionslieferungen der Pensionsversicherungsträger, Berichtsjahre 2018 bis 2025
+
+Inhalt: die Werte der Tabellen 12 und 13 der Jahresergebnisse des Dachverbands
+  Tabelle 12 – Stand der Pensionen nach Pensionsart und Geschlecht (Jahresdurchschnitt)
+  Tabelle 13 – Vorzeitige Alterspensionen nach Art und Geschlecht (Jahresdurchschnitt)
+
+Jeder Träger liefert nur seine eigenen Zahlen, und zwar in seinem eigenen Excel-Format. Die Formate
+unterscheiden sich zwischen den Trägern und können sich bei einem Träger von Jahr zu Jahr ändern.
+Die Zahlen selbst sind die veröffentlichten Werte; Summen über alle Träger (Insgesamt, PV der
+Unselbständigen, PV der Selbständigen) bildet ihr selbst.
+
+Je Jahr ein Ordner JJJJ/ mit den Lieferungen der Träger, die in diesem Jahr Pensionen melden:
+  2018–2019: PVA, VAEB (Eisenbahnen und Bergbau), SVA (gewerbliche Wirtschaft), SVB (Bauern),
+             VAN (Notariat, nur Pensionsstand)
+  2020–2025: PVA, BVAEB (Eisenbahn und Bergbau), SVS (gewerbliche Wirtschaft und Landwirtschaft)
+
+Achtung, Versicherungsbereiche sind keine Merkmale der Beschäftigten: Die Unterteilungen innerhalb eines Trägers
+gehen auf frühere, eigenständige Träger zurück, die zusammengelegt und als Bereiche weitergeführt werden.
+  PVA:   Arbeiter und Angestellte = frühere PVA der Arbeiter und PVA der Angestellten (zusammengelegt 2003)
+  VAEB/BVAEB: Eisenbahn(en) und Bergbau = frühere Versicherungsanstalten der Eisenbahnen und des Bergbaues
+  SVS:   gewerbliche Wirtschaft und Landwirtschaft = frühere SVA und SVB
+Die Bereiche "Arbeiter" und "Angestellte" der PVA sind daher nicht dasselbe wie die Qualifikation Arbeiter/Angestellte
+der Beschäftigtenstatistik und gehören in eine eigene Gliederung der Versicherungsträger, nicht in die Qualifikation.
+
+Zum 1.1.2020 wurden Träger zusammengelegt: SVA und SVB zur SVS, VAEB und BVA zur BVAEB; die
+Pensionsversicherung des Notariates ging in die SVS über.
+
+Quelle: Dachverband der österreichischen Sozialversicherungsträger, Jahresergebnisse 2018–2025
+(Versicherte, Pensionen, Renten).

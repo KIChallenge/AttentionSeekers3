@@ -1,0 +1,28 @@
+# Local environment and secrets
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+logs/
+exports/
+
+# Office lock files and macOS leftovers (ENV-04)
+~$*
+.DS_Store
+
+# Contains the SV-BOX password – must not go into the public repo (ENV-08)
+SV md files/Use Case 3 StatAgent.pdf
+SV md files/Use Case 3 StatAgent.md
+
+# Tool caches, editors, OS leftovers
+.pytest_cache/
+*.log
+.vscode/
+.idea/
+Thumbs.db
+.claude/settings.local.json
+
+# Database dumps from `statagent sichern` (several GB; share outside git, SW-19)
+sicherung/

@@ -1,0 +1,20 @@
+Regionale Gliederungen Österreichs, Stände 1.1.2011 bis 1.1.2026
+Quelle: Statistik Austria, data.statistik.gv.at (Datensätze OGDEXT_GEM_1, OGDEXT_POLBEZ_1), Lizenz CC BY 4.0.
+Aufbereitet ohne Geometrien.
+gemeinden_JJJJ-01-01.csv: Gemeindecode, Name, politischer Bezirk und Bundesland zum Stand 1.1.JJJJ
+bezirke_JJJJ-01-01.csv:   politische Bezirke zum Stand 1.1.JJJJ
+bundeslaender.csv:        Bundesländer
+Bezirk = erste drei Stellen, Bundesland = erste Stelle des Gemeindecodes.
+
+Änderungen/ – amtliche Änderungslisten von Statistik Austria, unverändert übernommen:
+  aenderungenGemeinden_ab2002.ods
+      Änderungen der Gemeindekennziffern seit 2002 in mehreren Blättern: alle Kennziffernänderungen (alt → neu, in Kraft seit, Grund),
+      Zusammenlegungen, Teilungen und Bezirkszusammenlegungen (z. B. Auflösung Wien-Umgebung 2017), mit gesetzlicher Grundlage.
+  aenderungenVerwaltungsgliederung01012002_31122011.pdf
+  aenderungenVerwaltungsgliederung01012012_31122021.pdf
+  aenderungenVerwaltungsgliederung01012022_01012027.pdf
+      jährliche Änderungen der Verwaltungsgliederung: Grenzänderungen, Zusammenlegungen, Teilungen, Namens- und Bezirksänderungen.
+  gemeindeaenderungen_ab1945.pdf
+      Auflösungen und Vereinigungen von Gemeinden seit 1945.
+Die Stände oben zeigen, wie die Gliederung zu einem Stichtag aussah; die Änderungslisten erklären, wie es von einem Stand zum nächsten kam
+(Übergänge alt → neu mit Beziehungstyp 1:1, n:1 bei Zusammenlegungen, 1:n bei Teilungen).

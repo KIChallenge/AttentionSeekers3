@@ -1,0 +1,20 @@
+# Top-level dependencies of StatAgent (Python >= 3.10).
+# Install reproducibly from the pinned requirements.txt:
+#   python -m pip install -r requirements.txt
+# Re-resolve (only releases older than 7 days):
+#   python -m pip install --uploaded-prior-to <YYYY-MM-DD> -r requirements.in && python -m pip freeze > requirements.txt
+psycopg[binary]
+pandas
+openpyxl
+odfpy
+pypdf
+typer
+python-dotenv
+fastapi
+uvicorn
+jinja2
+seaborn
+matplotlib
+openai
+pytest<9            # pytest 9.2 aborts on Python 3.10 (ENV-16)
+scikit-learn        # Phase 3b: corridor and error detector on synthetic deliveries

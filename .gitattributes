@@ -1,0 +1,10 @@
+# Delivered package files must stay byte-identical: their SHA-256 checksums are registered in
+# roh.datei and checked by `python -m statagent pruefen`. No line-ending conversion (core.autocrlf).
+lieferungen/** -text
+klassifikationen/** -text
+pensionen/** -text
+vorlagen/** -text
+datenbank/** -text
+beispielbericht_2024-08.xlsx -text
+docker-compose.yml -text
+SV[[:space:]]md[[:space:]]files/** -text

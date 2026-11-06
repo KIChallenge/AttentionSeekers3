@@ -1,0 +1,6 @@
+CODE;BEZEICHNUNG;BESCHAEFTIGUNGSKATEGORIE;FREIER_DIENSTVERTRAG
+ArbeiterDV;Arbeiter (Dienstvertrag);Arbeiter;N
+AngestellteDV;Angestellte (Dienstvertrag);Angestellte;N
+Beamte;Beamte;Beamte;N
+ArbeiterFD;Arbeiter (freier Dienstvertrag);Arbeiter;J
+AngestellteFD;Angestellte (freier Dienstvertrag);Angestellte;J

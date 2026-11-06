@@ -1,0 +1,24 @@
+# Lokale Datenbank für die KI Challenge – Use Case StatAgent
+# Start:  docker compose up -d      (erster Start lädt alle Lieferungen, ca. 2–4 Minuten)
+# Verbindung: localhost:5432 (anderer Port: DB_PORT=5433 docker compose up -d), Datenbank/Benutzer/Passwort: statistik
+services:
+  db:
+    image: postgres:16
+    container_name: statagent-db
+    environment:
+      POSTGRES_DB: statistik
+      POSTGRES_USER: statistik
+      POSTGRES_PASSWORD: statistik
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - ./datenbank:/docker-entrypoint-initdb.d:ro
+      - ./lieferungen:/daten/lieferungen:ro
+      - ./klassifikationen:/daten/klassifikationen:ro
+      - statagent-daten:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U statistik -d statistik"]
+      interval: 10s
+      retries: 30
+volumes:
+  statagent-daten:
